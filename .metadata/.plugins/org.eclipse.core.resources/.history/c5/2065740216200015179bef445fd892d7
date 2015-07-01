@@ -1,0 +1,33 @@
+package com.companyname.projectname.excelreader;
+
+import java.io.File;
+import java.io.FileInputStream;
+
+import org.apache.poi.xslf.usermodel.XSLFSheet;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+
+
+public class excelReader {
+	public static Object [][] data;
+	
+	public static boolean RunModeVerification (String TestCaseName) throws Exception{
+		
+		XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(new File ("")));
+		XSSFSheet TcSheetHome=workbook.getSheet("Home");
+		int TcrowHome=TcSheetHome.getLastRowNum();
+		for (int k=1;k<=TcrowHome;k++)
+		{
+			String RunMode=TcSheetHome.getRow(k).getCell(2).getStringCellValue();
+			String TCNameHome=TcSheetHome.getRow(k).getCell(0).getStringCellValue();
+			if(RunMode.equals("Y") & TCNameHome.equals(TestCaseName))
+			{
+				return true;
+			} 
+		}
+		return false;
+	}
+	
+
+}

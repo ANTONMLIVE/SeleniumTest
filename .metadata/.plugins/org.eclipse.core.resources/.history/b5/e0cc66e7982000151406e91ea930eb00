@@ -1,0 +1,16 @@
+package com.companyname.projectname.testcases;
+
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.companyname.projectname.excelreader.excelReader;
+import com.companyname.projectname.initializer.Initializer;
+import com.companyname.projectname.utils.ReportGenerator;
+
+public class GoogleTransaltionPageTest {
+	
+	
+
+}

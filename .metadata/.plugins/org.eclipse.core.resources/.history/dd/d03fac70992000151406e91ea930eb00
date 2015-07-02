@@ -1,0 +1,44 @@
+package com.companyname.projectname.testcases;
+
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.companyname.projectname.excelreader.excelReader;
+import com.companyname.projectname.initializer.Initializer;
+import com.companyname.projectname.utils.ReportGenerator;
+
+public class GoogleTransaltionPageTest extends Initializer {
+	
+	@Test(dataProvider="HomePageTest")
+	public void testHomePage(String testData,String name,String mobileno,String picadd,String dropadd,String budget) throws IOException
+	{
+		try {
+		Initializer();
+		
+		wd.get(configProp.getProperty("URL"));
+		
+		getWebelementByXpath("Home_Name_type_Xpath").sendKeys(name);//0
+		getWebelementByXpath("Home_Mobile_type_Xpath").sendKeys(mobileno);//1
+		getWebelementByXpath("Home_picAdd_type_Xpath").sendKeys(picadd);//2
+		getWebelementByXpath("Home_dropAdd_type_Xpath").sendKeys(dropadd);//3
+		getWebelementByXpath("Home_budget_select_Xpath").sendKeys(budget);//4
+		ReportGenerator.setLog("HomePageTest is failed", " ",testData+"_"+"Pass");
+		} catch (Throwable t)
+		{
+			ReportGenerator.setLog("HomePageTest is failed", t.getMessage().toString(),testData+"_"+"Fail");
+		}
+		
+		@DataProvider(name="HomePageTest")
+		public static Object[][] getHomePageData() throws Exception
+		{
+			if(excelReader.RunModeVerification("HomePageTest")){
+			Object[][] data=excelReader.selectSingleDataOrMulitiData("HomePageTest");
+			return data;
+			}
+			
+			return null;
+	}
+
+}

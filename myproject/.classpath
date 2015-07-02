@@ -32,5 +32,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="F:/GITHUB/MailApiJar/mailapi.jar"/>
+	<classpathentry kind="lib" path="F:/GITHUB/Jfree/jcommon-1.0.8.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -1,0 +1,6 @@
+#Google Translation Home Page objects
+Home_Button_English_Type_Xpath = html/body/div[3]/div[2]/form/div[2]/div/div/div[1]/div[1]/div[1]/div[1]/div[1]
+Home_LanguageDropDown_Type_Xpath = .//*[@id='gt-sl-gms']
+Home_TxtArea_SourceText_Type_Xpath = .//*[@id='source']
+Home_TxtArea_ResultText_Type_Xpath = .//*[@id='result_box']
+Home_Button_clearSourceText_Type_Xpath = .//*[@id='gt-clear']
